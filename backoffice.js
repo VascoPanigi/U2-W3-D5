@@ -98,14 +98,6 @@ const handleDelete = () => {
         Authorization: `${authorization}`,
       },
     })
-      .then((resp) => resp.json())
-      .then((resp) => {
-        if (resp.ok) {
-          return resp.json();
-        } else {
-          throw new Error("Errore nella fetch");
-        }
-      })
       .then((deletedObj) => {
         alert("prodotto: " + deletedObj.name + " eliminato con successo!");
         window.location.assign("./index.html");
