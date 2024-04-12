@@ -2,6 +2,10 @@ const URL = "https://striveschool-api.herokuapp.com/api/product/";
 
 const row = document.getElementById("row");
 
+const modifyElement = (id) => {
+  window.location.assign("./backoffice.html?id=" + id);
+};
+
 window.addEventListener("DOMContentLoaded", () => {
   fetch(URL, {
     method: "GET",
@@ -29,8 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const brand = obj.brand;
         const description = obj.description;
         const price = obj.price;
-        const id = obj.id;
-        console.log(obj);
+        const id = obj._id;
         const div = document.createElement("div");
         div.classList.add("col-xs-12");
 
@@ -52,19 +55,21 @@ window.addEventListener("DOMContentLoaded", () => {
                   </div>
                 </div>
                 <div class="container d-flex gap-3 justify-content-end mt-auto">
-                  <button class="btn btn-warning">Modifica</button>
+                  <button class="btn btn-warning btn-modify">Modifica</button>
                   <button class="btn btn-success">Scopri di più</button>
                 </div>
               </div>
         </div>
       `;
 
-        //function to remove CARD
-        // const hideBtn = div.querySelector(".hide-btn");
+        //function to modify CARD
+        const modifyBtn = div.querySelector(".btn-modify");
 
-        // hideBtn.addEventListener("click", () => {
-        //   row.removeChild(div);
-        // });
+        modifyBtn.addEventListener("click", () => {
+          modifyElement(id);
+
+          //   row.removeChild(div);
+        });
 
         row.appendChild(div);
       });
