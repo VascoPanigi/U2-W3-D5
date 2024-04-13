@@ -6,6 +6,10 @@ const modifyElement = (id) => {
   window.location.assign("./backoffice.html?id=" + id);
 };
 
+const redirectToDetailsPage = (id) => {
+  window.location.assign("./product-details.html?id=" + id);
+};
+
 window.addEventListener("DOMContentLoaded", () => {
   fetch(URL, {
     method: "GET",
@@ -38,9 +42,10 @@ window.addEventListener("DOMContentLoaded", () => {
         div.classList.add("col-xs-12");
 
         div.innerHTML = `
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative justify-content-sm-center bg-light
+        shadow border border-black border-opacity-25">
             <div class="col-auto d-flex justify-content-center align-items-center justify-content-center align-content">
-              <img src="${img}" alt="${name}" height="80%">
+              <img src="${img}" alt="${name}" height="70%">
             </div>
             <div class="col p-4 d-flex flex-column position-static">
                 <div class="container d-flex justify-content-between align-items-center">
@@ -50,13 +55,13 @@ window.addEventListener("DOMContentLoaded", () => {
                     <div class="mb-1 text-body-secondary"><h5>${brand}</h5></div>
                     <p class="card-text mb-auto">${description}</p>
                   </div>
-                  <div class="align-self-end">
-                    <h2>${price}</h2>
                   </div>
-                </div>
+                  <div class="align-self-end mt-3 mb-2 me-4 pt-3">
+                    <h2 class="price-tag">€ ${price}</h2>
+                  </div>
                 <div class="container d-flex gap-3 justify-content-end mt-auto">
                   <button class="btn btn-warning btn-modify">Modifica</button>
-                  <button class="btn btn-success">Scopri di più</button>
+                  <button class="btn btn-success details-page-btn">Scopri di più</button>
                 </div>
               </div>
         </div>
@@ -69,6 +74,12 @@ window.addEventListener("DOMContentLoaded", () => {
           modifyElement(id);
 
           //   row.removeChild(div);
+        });
+
+        //add functionality to details page btn
+        const detailsPageBtn = div.querySelector(".details-page-btn");
+        detailsPageBtn.addEventListener("click", () => {
+          redirectToDetailsPage(id);
         });
 
         row.appendChild(div);
