@@ -1,0 +1,44 @@
+nav {
+  background-color: #f47d16;
+  border-bottom: 3px solid black;
+}
+
+.nav-item > a {
+  color: #dee5ed;
+  font-size: 1.1rem;
+  text-shadow: 0.2px 0.3px #7a7a7a;
+}
+
+.price-tag {
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: #f47d16;
+  font-style: italic;
+  text-shadow: 0.1px 0.3px 3px rgb(165, 165, 165);
+}
+main {
+  background-color: #edeff1;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+.navbar .container-fluid {
+  padding-left: 8em;
+  padding-right: 8em;
+}
+
+.btn-success {
+  background-color: black;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #f47d16;
+  border: none;
+}
