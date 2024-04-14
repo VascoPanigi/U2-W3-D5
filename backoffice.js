@@ -11,11 +11,11 @@ const authorization =
 window.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   form.addEventListener("submit", handleSubmit);
-  const h1ActionType = document.getElementById("whatrudoinghere");
+  const modifyProductSubtitle = document.getElementById("modify-product");
   const submitBtn = document.getElementById("submit-btn");
   const deleteBtn = document.getElementById("delete-btn");
   if (id) {
-    h1ActionType.innerText = "Modifica appuntamento";
+    modifyProductSubtitle.innerText = "Modifica prodotto";
     submitBtn.classList.remove("btn-primary");
     submitBtn.classList.add("btn-warning");
     submitBtn.innerText = "Modifica";
@@ -36,8 +36,8 @@ window.addEventListener("DOMContentLoaded", () => {
           throw new Error("Errore nella fetch");
         }
       })
-      .then((appToModify) => {
-        const { name, description, brand, imageUrl, price } = appToModify;
+      .then((requiredFields) => {
+        const { name, description, brand, imageUrl, price } = requiredFields;
 
         document.getElementById("name").value = name;
         document.getElementById("description").value = description;
@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
       })
       .catch((err) => console.log(err));
   } else {
-    subtitle.innerText = "— Crea appuntamento";
+    subtitle.innerText = "Crea prodotto";
   }
 });
 

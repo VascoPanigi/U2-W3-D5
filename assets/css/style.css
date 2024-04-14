@@ -4,7 +4,7 @@ nav {
 }
 
 .nav-item > a {
-  color: #dee5ed;
+  color: #e2e7ec;
   font-size: 1.1rem;
   text-shadow: 0.2px 0.3px #7a7a7a;
 }
@@ -14,10 +14,11 @@ nav {
   font-size: 2.3rem;
   color: #f47d16;
   font-style: italic;
-  text-shadow: 0.1px 0.3px 3px rgb(165, 165, 165);
+  text-shadow: 0.1px 0.1px 0.1px rgb(165, 165, 165);
 }
 main {
   background-color: #edeff1;
+  padding-block-start: 5em;
 }
 
 footer {
@@ -41,4 +42,29 @@ footer p {
 .btn-success:hover {
   background-color: #f47d16;
   border: none;
+}
+
+footer {
+  background-color: #f47d16;
+  border-top: 3px solid black;
+  color: #e2e7ec;
+  text-shadow: 0.2px 0.3px #7a7a7a;
+}
+
+.navbar-toggler,
+.navbar-toggler-icon {
+  color: #e2e7ec;
+}
+
+#backoffice-form-container {
+  padding-block: 5rem 14rem;
+}
+
+.carousel-inner {
+  height: 600px;
+}
+
+.carousel-item,
+.carousel-item img {
+  width: 100%;
 }
